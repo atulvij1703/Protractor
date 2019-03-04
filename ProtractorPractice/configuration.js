@@ -1,6 +1,6 @@
 exports.config = {
 //seleniumAddress : 'http://localhost:4444/wd/hub',
-specs: ['Frames.js'],
+specs: ['Sync.js'],
 
 //capabilities: {
 //	  'browserName': 'firefox'
