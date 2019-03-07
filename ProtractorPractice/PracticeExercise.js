@@ -1,5 +1,11 @@
 describe('Practice Exercise',function() {  
 
+	function callback(b){
+		console.log('vaue',b);
+		
+	}
+	
+	
 function selectItems(product)
 {
 //take 4 cards into list
@@ -58,14 +64,40 @@ expect(x).toBe(2);
 
 element(by.partialLinkText("Checkout")).click();
 
-element.all(by.css("tbody tr")).each(function(item){
+
+	element.all(by.css("tbody tr")).count().then(function(c){
 	
-	item.element(by.css("td:nth-child(4)")).getText().then(function(text){
+})
+
+var b = 0;
+element.all(by.css("tbody tr")).then(function(item){
+	element.all(by.css("tbody tr")).count().then(function(c){
 		
-		console.log(text);
-	})
-})
+	 for(let i = 0; i<(c-2); i++)
+		 {
+	 item[i].element(by.css("td:nth-child(4)")).getText().then((text)=>{
+		 var a = text.split(" ");
+		 var x = Number(a[1]);
+		 
+		 b = b+x;
+		 
+		 while(i==(c-3))
+			 {
+			 expect(b).toBe(185000);
+			 }
+		 
+	 })
+	
+		 }
+	 
+	 
+	 
+ })
+ 
+ 
+
 
 })
 
-})
+})})
+
