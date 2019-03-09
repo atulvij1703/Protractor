@@ -1,4 +1,4 @@
-describe("Alerts Practice", function(){
+describe("Frames Practice", function(){
 	it("Opening the site", function(){
 		
 		browser.waitForAngularEnabled(false);
