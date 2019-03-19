@@ -1,13 +1,17 @@
 describe("Protractor practice",function(){
-	it("Opening the no vacancy webapp",function(){
+	var obj = require("./jsObject.js");
+	
+	beforeEach(function(){
+		obj.getURL();
 		
-		//Open the No vacancy webapp.
-		browser.get("http://juliemr.github.io/protractor-demo/");
-		element(by.model("first")).sendKeys("3");
-		element(by.model("second")).sendKeys("4");
-		element(by.id("gobutton")).click();
+	})
+	it("Opening the site",function(){
+				
+		obj.first.sendKeys("3");
+		obj.second.sendKeys("4");
+		obj.go.click();
 		
-		element(by.css("h2[class='ng-binding']")).getText().then(function(ans){
+		obj.result.getText().then(function(ans){
 			
 			console.log(ans);
 			
@@ -23,9 +27,12 @@ describe("Protractor practice",function(){
 		})
 		//Real output will display only when you resolve promise.
 		
-		expect(element(by.css("h2[class='ng-binding']")).getText()).toBe("7");
+		expect(obj.result.getText()).toBe("7");
 		//Jasmine takes care of promise resolve.
 		
 		
 	})	
+	afterEach(function(){
+		console.log("Test completed");
+	})
 })
