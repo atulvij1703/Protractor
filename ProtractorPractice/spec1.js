@@ -12,7 +12,7 @@ describe("Protractor practice",function(){
 	//description stores the sub object like FirstData etc.
 	//for every iteration one data set is picked.
 	using(d.datadrive, function (data, description) {
-		it("Opening the site",function(){
+		it("Opening the site "+description,function(){
 			
 			obj.first.sendKeys(data.firstinput);
 			obj.second.sendKeys(data.secondinput);
